@@ -15,5 +15,10 @@ Run these commands:
 
 or Run by docker compose
 
-test
+#Few permissions need to be given
+usermod -a -G docker jenkins
+ systemctl restart jenkins
+ #in shell need this command to be added to automate
+docker build . -t node-app
+ docker run -d --name node-container -p 8000:8000 node-app
 
